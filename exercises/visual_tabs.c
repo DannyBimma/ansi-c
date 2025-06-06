@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-    int c;
-
-    for (c = getchar(); c != EOF; c = getchar()) {
+    
+    for (int c = getchar(); c != EOF; c = getchar()) {
         if (c == '\t')
             printf("\\t\n");
 
