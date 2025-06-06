@@ -1,10 +1,7 @@
 #include <stdio.h>
 
-#define IN 1
-#define OUT 0
-
 int main(void) {
-    // Count chars, words, and lines from stream
+    // Count chars, words, sentences, and lines from stream
     int c;
     int state;
     int lines, words, chars = 0;
