@@ -4,7 +4,7 @@ int main(void) {
     // Count: chars, words, statements, and lines
     int chars, words, statements, lines = 0;
 
-    for (int c_lit = getchar(); c_lit != EOF; ++chars) {
+    for (int c_lit = getchar(); c_lit != EOF; c_lit = getchar(), ++chars) {
         if (c_lit == ' ')
             ++words;
 
