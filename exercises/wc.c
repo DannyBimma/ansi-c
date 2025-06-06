@@ -2,9 +2,7 @@
 
 int main(void) {
     // Count chars, words, sentences, and lines from stream
-    int c;
-    int state;
-    int lines, words, chars = 0;
+    int chars, words, sentences, lines = 0;
 
     while ((c = getchar()) != EOF) {
         ++chars;
