@@ -25,7 +25,7 @@ int main(void) {
             ++lines;
         }
     }
-    printf("Text stream contains:\n%d characters\n %d words\n %d statements\n %d lines\n\n", chars, words - 1, statements, lines);
+    printf("Text stream contains:\n%d characters\n %d words\n %d statements\n %d lines\n\n", chars, words, statements, lines);
 
     return 0;
 }
