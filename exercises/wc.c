@@ -8,8 +8,7 @@ int main(void) {
     int chars = 0, words = 0, statements = 0, lines = 0;
     int state;
 
-    for (int c_lit = getchar(); c_lit != EOF; c_lit = getchar()) {
-        ++chars;
+    for (int c_lit = getchar(); c_lit != EOF; c_lit = getchar(), ++chars) {
 
         if (c_lit == '\n')
             ++lines;
