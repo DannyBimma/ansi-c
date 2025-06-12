@@ -13,8 +13,9 @@ int main(void) {
         if (c_lit != ' ' && c_lit != '\n' && c_lit != '\t') {
             char c = c_lit;
             printf("%c", c);
-            printf("\n");
         }
+
+        printf("\n");
 
         if (c_lit == ' ' || c_lit == '\n' || c_lit == '\t')
             state = OUT;
