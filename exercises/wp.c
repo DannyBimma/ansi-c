@@ -15,10 +15,10 @@ int main(void) {
             printf("%c", c);
         }
 
-        printf("\n");
-
-        if (c_lit == ' ' || c_lit == '\n' || c_lit == '\t')
+        if (c_lit == ' ' || c_lit == '\n' || c_lit == '\t') {
             state = OUT;
+            printf("\n");
+        }
         else if (state == OUT)
             state = IN;
     }
