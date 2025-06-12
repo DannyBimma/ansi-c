@@ -6,7 +6,7 @@
 int main(void) {
     // Count: chars, words, statements, and lines
     int chars = 0, words = 0, statements = 0, lines = 0;
-    int state;
+    int state = OUT;
 
     for (int c_lit = getchar(); c_lit != EOF; c_lit = getchar(), ++chars) {
 
