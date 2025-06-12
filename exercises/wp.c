@@ -8,6 +8,7 @@ int main(void) {
     int chars = 0;
     int state = OUT;
 
+    // Print each word in file on a new line
     for (int c_lit = getchar(); c_lit != EOF; c_lit = getchar(), ++chars) {
 
         if (c_lit != ' ' && c_lit != '\n' && c_lit != '\t') {
@@ -22,4 +23,7 @@ int main(void) {
         else if (state == OUT)
             state = IN;
     }
+
+    printf("\n");
+    return 0;
 }
