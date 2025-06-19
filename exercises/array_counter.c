@@ -16,4 +16,12 @@ int main(void) {
         else
             ++n_other;
     }
+    printf("digits = ");
+
+    for (int i = 0; i < 10; i++)
+        printf(" %d", n_digit[i]);
+
+    printf(", white space = %d\n, other = %d\n", n_white, n_other);
+
+    return 0;
 }
