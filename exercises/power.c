@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int power(int, int);
+int power(int deez, int nutz);
 
 int main(void) {
     for (int i = 0; i < 10; ++i)
