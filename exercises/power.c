@@ -8,3 +8,12 @@ int main(void) {
 
     return 0;
 }
+
+int power(int base, int exp) {
+    int result = 1;
+
+    for (int i = result; i <= exp; ++i)
+        result *= base;
+
+    return result;
+}
