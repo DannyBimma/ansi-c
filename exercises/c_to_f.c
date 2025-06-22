@@ -8,7 +8,7 @@ int main(void)
     float upperBound = 300;
 
     // Temp output heading
-    printf("CELCIUS TO FAHRENHEIT TABLE\n");
+    printf("CELSIUS TO FAHRENHEIT TABLE\n");
     printf("\n");
 
     for(c = lowerBound; c <= upperBound; c += 5)
