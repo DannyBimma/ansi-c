@@ -15,10 +15,9 @@ int main(void) {
             current_max = current_line_len;
             copy(longest_line, current_line);
         }
-
-        if (current_max > 0)
-            printf("%s", longest_line);
     }
+    if (current_max > 0)
+        printf("%s", longest_line);
 
     return 0;
 }
