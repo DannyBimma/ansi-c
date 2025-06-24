@@ -9,6 +9,18 @@ int main(void) {
     int current_max = 0;
     char current_line[MAXLINE];
     char longest_line[MAXLINE];
+
+    while ((current_line_len = get_line(current_line, MAXLINE)) > 0) {
+        if (current_line_len > current_max) {
+            current_max = current_line_len;
+            copy(longest_line, current_line);
+        }
+
+        if (current_max > 0)
+            printf("%s", longest_line);
+    }
+
+    return 0;
 }
 
 int get_line(char s[], int lim) {
