@@ -16,13 +16,12 @@ int main(void)
     for(c = lowerBound; c <= upperBound; c += 5)
     {
         celsius_to_fahrenheit(c, &f);
-        //f = (c * 9.0/5.0) + 32;
-       //printf("%3.0f c\t=\t%6.1f f\n", c, f);
     }
     return 0;
 }
 
 void celsius_to_fahrenheit(float celsius, float *fahrenheit) {
     *fahrenheit = (celsius * 9.0/5.0) + 32;
+
     printf("%3.0f c\t=\t%6.1f f\n", celsius, *fahrenheit);
 }
