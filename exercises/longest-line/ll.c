@@ -17,7 +17,7 @@ int main(void) {
         }
     }
     if (current_max > 0)
-        printf("%s", longest_line);
+        printf("%s\n", longest_line);
 
     return 0;
 }
