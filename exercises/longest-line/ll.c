@@ -1,6 +1,8 @@
 #include <stdio.h>
 #define MAXLINE 1000
 
+int get_line(char s[], int lim);
+
 int main(void) {
     int current_line_len;
     int current_max = 0;
