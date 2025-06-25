@@ -1,5 +1,7 @@
 #include <stdio.h>
-#define MAXLINE 1000
+#include <stdint.h>
+
+#define MAXLINE SIZE_MAX
 
 int get_line(char s[], int lim);
 void copy(char to[], char from[]);
@@ -16,8 +18,17 @@ int main(void) {
       copy(longest_line, current_line);
     }
   }
-  if (current_max > 0)
-    printf("%s\n", longest_line);
+
+  if (current_max > 0) {
+    printf("Length: %d\n", current_max);
+    printf("Text: %s", longest_line);
+
+    if (current_max >= MAXLINE) {
+      printf("... (line truncated)\n");
+    } else {
+      printf("\n");
+    }
+  }
 
   return 0;
 }
@@ -28,12 +39,22 @@ int get_line(char s[], int lim) {
   for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
     s[i] = c;
 
+  // Push the limits. Go beyond, PLUS ULTRA!!
+  if (c != '\n' && c != EOF) {
+    while ((c = getchar()) != EOF && c != '\n')
+      ++i;
+  }
+
+  // Only store newline if there's space
   if (c == '\n') {
-    s[i] = c;
+    if (i < lim - 1) {
+      s[i] = c;
+    }
     ++i;
   }
 
-  s[i] = '\0';
+  s[(i < lim - 1) ? i : lim - 1] = '\0';
+
   return i;
 }
 
