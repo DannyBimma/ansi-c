@@ -2,9 +2,11 @@
  * using external variables and scope */
 
 #include <stdio.h>
-#include <sys/resource.h>
 
 #define MAXLINE 1000
+
+int getline(void);
+void copy(void);
 
 int max;
 char line[MAXLINE];
@@ -15,7 +17,19 @@ int main(void) {
     extern int max;
     extern char longest[];
 
+    max = 0;
 
+    while ((len = getline()) > 0)
+        if (len > max) {
+            max = len;
+
+            copy();
+        }
+
+    if (max > 0)
+        printf("%s\n", longest);
+
+    return 0;
 }
 
 int getline(void) {
