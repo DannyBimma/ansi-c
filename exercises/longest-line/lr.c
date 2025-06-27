@@ -6,6 +6,7 @@
 void reverse(char s[]);
 int getline(char line[], int maxline);
 
+// White Book C: Exercise 1-19
 int main() {
   char line[MAXLINE];
 
