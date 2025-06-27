@@ -5,7 +5,7 @@
 
 #define MAXLINE 1000
 
-int getline(void);
+int get_line(void);
 void copy(void);
 
 int max;
@@ -19,7 +19,7 @@ int main(void) {
 
     max = 0;
 
-    while ((len = getline()) > 0)
+    while ((len = get_line()) > 0)
         if (len > max) {
             max = len;
 
@@ -32,7 +32,7 @@ int main(void) {
     return 0;
 }
 
-int getline(void) {
+int get_line(void) {
     int c, i;
     extern char line[];
 
