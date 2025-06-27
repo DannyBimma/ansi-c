@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 
 #define MAXLINE 6666
 
@@ -15,6 +15,7 @@ int main(void) {
   while ((current_line_len = get_line(current_line, MAXLINE)) > 0) {
     if (current_line_len > current_max) {
       current_max = current_line_len;
+
       copy(longest_line, current_line);
     }
   }
