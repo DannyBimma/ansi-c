@@ -1,4 +1,4 @@
-/*Exercise 1-21: - Write a program in C (entab.c) that
+/*Exercise 1-21: - Write a program in C that
  *replaces strings of blanks with the minimum number of
  *tabs and blanks to achieve the same spacing. Use the
  *same tab stops as for detab.c*/

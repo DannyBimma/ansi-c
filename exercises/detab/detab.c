@@ -1,4 +1,4 @@
-/*Exercise 1-20: - Write a program in C (detab.c) that
+/*Exercise 1-20: - Write a program in C that
  *replaces tabs in the input with the proper number of
  *blanks to space to the next tab stop. Assume a fixed
  *set of tab stops, every n columns.*/
