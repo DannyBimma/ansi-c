@@ -1,4 +1,10 @@
-/* Copyright 2025 DannyBimma */
+/*
+ * Copyright 2025 Your DannyBimma
+ *
+ * Description: A program that says hello to the world with style
+ * Author: DannyBimma
+ * Created: June 10, 2025
+ */
 
 #include <stdio.h>
 
