@@ -14,9 +14,9 @@ int main(void) {
   printf("CELSIUS TO FAHRENHEIT TABLE\n");
   printf("\n");
 
-  for (c = lowerBound; c <= upperBound; c += 5) {
+  for (c = lowerBound; c <= upperBound; c += 5)
     celsius_to_fahrenheit(c, &f);
-  }
+
   return 0;
 }
 
