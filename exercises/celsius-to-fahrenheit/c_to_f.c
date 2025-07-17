@@ -7,6 +7,7 @@ void celsius_to_fahrenheit(float celsius, float *fahrenheit);
 int main(void) {
   float c;
   float f;
+  int increment = 5;
   float lowerBound = 0;
   float upperBound = 300;
 
@@ -14,7 +15,7 @@ int main(void) {
   printf("CELSIUS TO FAHRENHEIT TABLE\n");
   printf("\n");
 
-  for (c = lowerBound; c <= upperBound; c += 5)
+  for (c = lowerBound; c <= upperBound; c += increment)
     celsius_to_fahrenheit(c, &f);
 
   return 0;
