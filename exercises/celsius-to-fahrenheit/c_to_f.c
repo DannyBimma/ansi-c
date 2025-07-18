@@ -8,10 +8,10 @@ int main(void) {
   float c;
   float f;
   int increment = 5;
-  float lowerBound = 0;
-  float upperBound = 300;
+  float lowerBound = 0.0;
+  float upperBound = 300.0;
 
-  // Temp output heading
+  // Output heading
   printf("CELSIUS TO FAHRENHEIT TABLE\n");
   printf("\n");
 
@@ -22,7 +22,7 @@ int main(void) {
 }
 
 void celsius_to_fahrenheit(float celsius, float *fahrenheit) {
-  *fahrenheit = (celsius * 9.0 / 5.0) + 32;
+  *fahrenheit = (celsius * 9.0 / 5.0) + 32.0;
 
   printf("%3.0f c\t=\t%6.1f f\n", celsius, *fahrenheit);
 }
