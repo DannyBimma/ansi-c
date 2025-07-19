@@ -1,12 +1,14 @@
+/*Copyright (c) 2025 DannyBimma. All Rights Reserved.*/
+
 #include <stdio.h>
 
 int main(void) {
-    double count;
+  double count;
 
-    for (count = 0; getchar() != EOF; ++count)
-        ; // Null statement
+  for (count = 0; getchar() != EOF; ++count)
+    ; // Null statement
 
-    printf("%.0f\n", count);
+  printf("%.0f\n", count);
 
-    return 0;
+  return 0;
 }
