@@ -1,4 +1,5 @@
-/*Copyright (c) 2025 ANSI C. All Rights Reserved.*/
+/*Copyright (c) 2025 ANSI C. All Rights Reserved.
+ *Prints Fahrenheit to Celsius table*/
 
 #include <stdio.h>
 
