@@ -6,6 +6,11 @@
  reverse order. ✅
  */
 
+#define UPPER 300
+#define LOWER 0
+#define STEP 20
+#define CALCULATION (5.0 / 9.0) * (fahr - 32))
+
 #include <stdio.h>
 
 int main(void) {
@@ -15,8 +20,8 @@ int main(void) {
   printf("FAHRENHEIT TO CELSIUS TABLE\n");
   printf("\n");
 
-  for (fahr = 300; fahr >= 0; fahr -= 20) {
-    printf("%3d %6.1f\n", fahr, (5.0 / 9.0) * (fahr - 32));
+  for (fahr = UPPER; fahr >= LOWER; fahr -= STEP) {
+    printf("%3d %6.1f\n", fahr, CALCULATION;
   }
 
   return 0;
