@@ -8,26 +8,26 @@
 
 #include <stdio.h>
 
+#define UPPER 300
+#define LOWER 0
+#define STEP 20
+#define CALCULATION (5.0 / 9.0) * (fahr - 32.0)
+
 int main(void) {
   float fahr, celcius;
-  int lower, upper, step;
 
-  lower = 0;
-  upper = 300;
-  step = 20;
-
-  fahr = lower;
+  fahr = LOWER;
 
   // Output heading
   printf("FAHRENHEIT TO CELSIUS TABLE\n");
   printf("\n");
 
-  while (fahr <= upper) {
-    celcius = (5.0 / 9.0) * (fahr - 32.0);
+  while (fahr <= UPPER) {
+    celcius = CALCULATION;
 
     printf("%3.0f\t%6.1f\n", fahr, celcius);
 
-    fahr = fahr + step;
+    fahr += STEP;
   }
 
   return 0;
