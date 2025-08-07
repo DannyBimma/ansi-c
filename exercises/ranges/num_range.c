@@ -1,3 +1,12 @@
+/*Copyright (c) 2025 DannyBimma. All Rights Reserved.
+ *
+ * Exercise 2-1:
+ *
+ * A program to determine the ranges of char, short, int,
+ * and long variables, both signed and unsigned, by printing
+ * appropriate values from standard headers and by direct
+ * computation.*/
+
 #include <float.h>
 #include <limits.h>
 #include <stdio.h>
@@ -40,6 +49,7 @@ int main() {
   printf("  LDBL_MAX = %Le\n", LDBL_MAX);
   printf("  LDBL_EPSILON = %Le\n", LDBL_EPSILON);
 
+  // Direct floating-point computations
   printf("\n\n=== RANGES BY DIRECT COMPUTATION ===\n\n");
 
   printf("Signed char:\n");
