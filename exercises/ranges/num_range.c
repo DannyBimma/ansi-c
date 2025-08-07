@@ -106,43 +106,20 @@ int main() {
 
   printf("\nFloat ranges (computed):\n");
   float f = 1.0;
+  float prev_f = f;
   while (f / 2.0 > 0.0) {
+    prev_f = f;
     f /= 2.0;
   }
-  printf("  Approximate minimum positive value: %e\n", f);
+  printf("  Approximate minimum positive value: %e\n", prev_f);
 
   f = 1.0;
-  while (f * 2.0 != f) {
+  prev_f = f;
+  while (f * 2.0 < __builtin_inff()) {
+    prev_f = f;
     f *= 2.0;
   }
-  printf("  Approximate maximum value: %e\n", f);
+  printf("  Approximate maximum value: %e\n", prev_f);
 
   return 0;
 }
-
-/*
- * Explanation of the <<=/bitwise operation used in direct computation:
- *
- * The <<= operator is a left shift assignment operator.
- * sc <<= 1 is equivalent to sc = sc << 1
- *
- * How it works:
- * - << shifts bits left by the specified positions
- * - Each left shift by 1 position multiplies the value by 2
- * - <<= applies the shift and stores the result back in the variable
- *
- * Example with 8-bit signed char:
- * sc = 1:     00000001
- * sc <<= 1:   00000010  (2)
- * sc <<= 1:   00000100  (4)
- * sc <<= 1:   00001000  (8)
- * ...
- * sc <<= 1:   10000000  (-128, overflow!)
- *
- * The loop continues while sc > 0. When we shift into the sign bit
- * (leftmost bit), the number becomes negative and the loop stops.
- * At that point, sc contains the minimum value for that signed type.
- *
- * This technique exploits two's complement representation where the
- * minimum negative value has only the sign bit set.
- */
