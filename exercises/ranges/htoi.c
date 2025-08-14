@@ -12,7 +12,16 @@
 
 int htoi(char s[]);
 
-int main(void) {}
+int main(void) {
+  // Hex sex
+  printf("01A4 = %d\n", htoi("01A4"));
+  printf("0045 = %d\n", htoi("0045"));
+  printf("123 = %d\n", htoi("123"));
+  printf("ABC = %d\n", htoi("ABC"));
+  printf("0xabc = %d\n", htoi("0xabc"));
+
+  return 0;
+}
 
 // Hex converter
 int htoi(char s[]) {
