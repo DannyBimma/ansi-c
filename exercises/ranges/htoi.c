@@ -13,3 +13,32 @@
 int htoi(char s[]);
 
 int main(void) {}
+
+// Hex converter
+int htoi(char s[]) {
+  int i = 0;
+  int res = 0;
+
+  if (s[i] == '0' && s[i + 1] == 'x' || s[i + 1] == 'X')
+    i += 2;
+
+  while (s[i] != '\0') {
+    // Shift left by 4 bits
+    res = res * 16;
+
+    // Convert i to hex and add to result
+    if (s[i] >= '0' && s[i] <= '9')
+      res = res + (s[i] - '0');
+    else if (s[i] >= 'a' && s[i] <= 'f')
+      res = res + (s[i] - 'a' + 10);
+    else if (s[i] >= 'A' && s[i] <= 'F')
+      res = res + (s[i] - 'A' + 10);
+    else
+      // its invalid
+      break;
+
+    res++;
+  }
+
+  return res;
+}
