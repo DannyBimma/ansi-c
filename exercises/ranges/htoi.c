@@ -13,7 +13,7 @@
 int htoi(char s[]);
 
 int main(void) {
-  // Hex sex
+  // Hex
   printf("01A4 = %d\n", htoi("01A4"));
   printf("0045 = %d\n", htoi("0045"));
   printf("123 = %d\n", htoi("123"));
@@ -46,7 +46,7 @@ int htoi(char s[]) {
       // its invalid
       break;
 
-    res++;
+    i++;
   }
 
   return res;
