@@ -5,8 +5,7 @@
 
   - Handles optional "0x" or "0X" prefix
   - Accepts digits 0-9, lower-case a-f, and upper-case A-F
-  - Stops processing at invalid characters
-  - Each step is thoroughly commented as requested*/
+  - Stops processing at invalid characters*/
 
 #include <stdio.h>
 
