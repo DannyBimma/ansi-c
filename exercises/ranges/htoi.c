@@ -22,29 +22,28 @@ int main(void) {
   return 0;
 }
 
-// Hex converter
+// The magic
 int htoi(char s[]) {
   int i = 0;
   int res = 0;
+  int digit;
 
-  if (s[i] == '0' && s[i + 1] == 'x' || s[i + 1] == 'X')
-    i += 2;
+  if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X'))
+    i = 2;
 
   while (s[i] != '\0') {
-    // Shift left by 4 bits
-    res = res * 16;
+    res <<= 4;
 
-    // Convert i to hex and add to result
     if (s[i] >= '0' && s[i] <= '9')
-      res = res + (s[i] - '0');
+      digit = s[i] - '0';
     else if (s[i] >= 'a' && s[i] <= 'f')
-      res = res + (s[i] - 'a' + 10);
+      digit = s[i] - 'a' + 10;
     else if (s[i] >= 'A' && s[i] <= 'F')
-      res = res + (s[i] - 'A' + 10);
+      digit = s[i] - 'A' + 10;
     else
-      // its invalid
       break;
 
+    res |= digit;
     i++;
   }
 
