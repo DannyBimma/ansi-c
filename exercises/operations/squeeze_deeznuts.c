@@ -15,3 +15,15 @@ int c_in_s(char c, char s[]) {
 
   return 0;
 }
+
+// Refactored squeeze (of deez nuts 🤭)
+void squeeze(char s1[], char s2[]) {
+  int i, j;
+
+  for (i = j = 0; s1[i] != '\0'; i++) {
+    if (!c_in_s(s1[i], s2))
+      s1[j++] = s1[i];
+  }
+
+  s1[j] = '\0';
+}
