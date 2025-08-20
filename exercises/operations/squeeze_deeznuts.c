@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int c_in_s(char c, char s[]);
+int c_in_s(unsigned char c, unsigned char bitmap[32]);
 void squeeze(char s1[], char s2[]);
 
 int main() {
@@ -40,22 +40,25 @@ int main() {
   return 0;
 }
 
-// Helper func to find chars in a string
-int c_in_s(char c, char s[]) {
-  for (int i = 0; s[i] != '\0'; i++) {
-    if (s[i] == c)
-      return 1;
-  }
-
-  return 0;
+// Helper func to check for c in s with bitmap lookup
+int c_in_s(unsigned char c, unsigned char bitmap[32]) {
+  return (bitmap[c / 8] & (1 << (c % 8))) != 0;
 }
 
 // Refactored squeeze (of deez nuts 🤭)
 void squeeze(char s1[], char s2[]) {
+  // 32 bytes set to 0 = 256 bits
+  unsigned char bitmap[32] = {0};
   int i, j;
 
+  for (i = 0; s2[i] != '\0'; i++) {
+    unsigned char c = (unsigned char)s2[i];
+
+    bitmap[c / 8] |= (1 << (c % 8));
+  }
+
   for (i = j = 0; s1[i] != '\0'; i++) {
-    if (!c_in_s(s1[i], s2))
+    if (!c_in_s((unsigned char)s1[i], bitmap))
       s1[j++] = s1[i];
   }
 
