@@ -45,4 +45,19 @@ int any(const char s1[], const char s2[]) {
 
     c_bitmap[byte_index] |= (1u << bit_position);
   }
+
+  // Second pass: check if any character from s1 has its bit set
+  for (int i = 0; s1[i] != '\0'; i++) {
+    unsigned char c = (unsigned char)s1[i];
+
+    int byte_index = c / 32;
+    int bit_position = c % 32;
+
+    // Bit test = true
+    if (c_bitmap[byte_index] & (1u << bit_position))
+      return 1;
+  }
+
+  // Bit test = false
+  return 0;
 }
