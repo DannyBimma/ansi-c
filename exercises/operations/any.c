@@ -26,7 +26,7 @@ int main(void) {
   printf("Result: %d (should be -1 - no x, y, or z)\n\n", any("apple", "xyz"));
 
   // Test case 4: empty s2 string
-  printf("Test 5: any(\"hello\", \"\")\n");
+  printf("Test 4: any(\"hello\", \"\")\n");
   printf("Result: %d (should be -1 - empty search string)\n\n",
          any("hello", ""));
 
@@ -55,9 +55,9 @@ int any(const char s1[], const char s2[]) {
 
     // Bit test = true
     if (c_bitmap[byte_index] & (1u << bit_position))
-      return 1;
+      return i;
   }
 
   // Bit test = false
-  return 0;
+  return -1;
 }
