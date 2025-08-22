@@ -33,4 +33,16 @@ int main(void) {
   return 0;
 }
 
-int any(const char s1[], const char s2[]) { unsigned char c_bitmap[32] = {0}; }
+int any(const char s1[], const char s2[]) {
+  unsigned char c_bitmap[32] = {0};
+
+  // First pass: set bits for chars present in s2
+  for (int i = 0; s2[i] != '\0'; i++) {
+    unsigned char c = (unsigned char)s2[i];
+
+    int byte_index = c / 32;
+    int bit_position = c % 32;
+
+    c_bitmap[byte_index] |= (1u << bit_position);
+  }
+}
