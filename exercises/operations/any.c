@@ -13,7 +13,22 @@
 #define SET_BIT(bitmap, c) ((bitmap)[(c) / 32] |= (1u << ((c) % 32)))
 #define TEST_BIT(bitmap, c) ((bitmap)[(c) / 32] & (1u << ((c) % 32)))
 
-int any(const char s1[], const char s2[]);
+int any(const char s1[], const char s2[]) {
+  unsigned char c_bitmap[32] = {0};
+
+  // First loop: set bits for chars present in s2
+  for (int i = 0; s2[i] != '\0'; i++)
+    SET_BIT(c_bitmap, (unsigned char)s2[i]);
+
+  // Second loop: check if any char from s1 has its bit set
+  for (int i = 0; s1[i] != '\0'; i++)
+    if (TEST_BIT(c_bitmap, (unsigned char)s1[i]))
+      // Bit test = true
+      return 1;
+
+  // Bit test = false
+  return -1;
+}
 
 int main(void) {
   // Test case 1: match found
@@ -35,21 +50,4 @@ int main(void) {
          any("hello", ""));
 
   return 0;
-}
-
-int any(const char s1[], const char s2[]) {
-  unsigned char c_bitmap[32] = {0};
-
-  // First loop: set bits for chars present in s2
-  for (int i = 0; s2[i] != '\0'; i++)
-    SET_BIT(c_bitmap, (unsigned char)s2[i]);
-
-  // Second loop: check if any char from s1 has its bit set
-  for (int i = 0; s1[i] != '\0'; i++)
-    if (TEST_BIT(c_bitmap, (unsigned char)s1[i]))
-      // Bit test = true
-      return 1;
-
-  // Bit test = false
-  return -1;
 }
