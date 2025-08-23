@@ -9,6 +9,10 @@
 
 #include <stdio.h>
 
+// Macros to test and set bits in bitmap
+#define SET_BIT(bitmap, c) ((bitmap)[(c) / 32] |= (1u << ((c) % 32)))
+#define TEST_BIT(bitmap, c) ((bitmap)[(c) / 32] & (1u << ((c) % 32)))
+
 int any(const char s1[], const char s2[]);
 
 int main(void) {
@@ -36,27 +40,15 @@ int main(void) {
 int any(const char s1[], const char s2[]) {
   unsigned char c_bitmap[32] = {0};
 
-  // First pass: set bits for chars present in s2
-  for (int i = 0; s2[i] != '\0'; i++) {
-    unsigned char c = (unsigned char)s2[i];
+  // First loop: set bits for chars present in s2
+  for (int i = 0; s2[i] != '\0'; i++)
+    SET_BIT(c_bitmap, (unsigned char)s2[i]);
 
-    int byte_index = c / 32;
-    int bit_position = c % 32;
-
-    c_bitmap[byte_index] |= (1u << bit_position);
-  }
-
-  // Second pass: check if any character from s1 has its bit set
-  for (int i = 0; s1[i] != '\0'; i++) {
-    unsigned char c = (unsigned char)s1[i];
-
-    int byte_index = c / 32;
-    int bit_position = c % 32;
-
-    // Bit test = true
-    if (c_bitmap[byte_index] & (1u << bit_position))
-      return i;
-  }
+  // Second loop: check if any char from s1 has its bit set
+  for (int i = 0; s1[i] != '\0'; i++)
+    if (TEST_BIT(c_bitmap, (unsigned char)s1[i]))
+      // Bit test = true
+      return 1;
 
   // Bit test = false
   return -1;
