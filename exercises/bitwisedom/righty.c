@@ -6,9 +6,10 @@
 
 #include <stdio.h>
 
-unsigned rightrot(unsigned x, int n) {
-  int word_length = sizeof(unsigned) * 8;
-  n = n % word_length;
+#define WORD_LENGTH (sizeof(unsigned) * 8)
 
-  return (x >> n) | (x << (word_length - n));
+unsigned rightrot(unsigned x, int n) {
+  n = n % WORD_LENGTH;
+
+  return (x >> n) | (x << (WORD_LENGTH - n));
 }

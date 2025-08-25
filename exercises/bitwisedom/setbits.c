@@ -7,8 +7,13 @@
 #include <stdio.h>
 
 unsigned setbits(unsigned x, int p, int n, unsigned y) {
-  unsigned mask = ~(~0 << n) << (p + 1 - n);
-  unsigned y_bits = (y & ~(~0 << n)) << (p + 1 - n);
+  if (n <= 0 || p < 0 || p >= 32 || n > p + 1) {
+    return x;
+  }
+
+  unsigned n_mask = ~(~0 << n);
+  unsigned mask = n_mask << (p + 1 - n);
+  unsigned y_bits = (y & n_mask) << (p + 1 - n);
 
   return (x & ~mask) | y_bits;
 }
