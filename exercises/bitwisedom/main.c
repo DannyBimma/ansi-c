@@ -5,21 +5,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Functions for output test
 unsigned invert(unsigned x, int p, int n);
 unsigned rightrot(unsigned x, int n);
 unsigned setbits(unsigned x, int p, int n, unsigned y);
-
-void print_binary(unsigned n) {
-  for (int i = 31; i >= 0; i--) {
-    printf("%d", (n >> i) & 1);
-    if (i % 4 == 0 && i != 0)
-      printf(" ");
-  }
-}
+void print_binary(unsigned n);
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
     printf("Usage: %s <unsigned_integer>\n", argv[0]);
+
     return 1;
   }
 
@@ -62,4 +57,12 @@ int main(int argc, char *argv[]) {
   printf("\n");
 
   return 0;
+}
+
+void print_binary(unsigned n) {
+  for (int i = 31; i >= 0; i--) {
+    printf("%d", (n >> i) & 1);
+    if (i % 4 == 0 && i != 0)
+      printf(" ");
+  }
 }
