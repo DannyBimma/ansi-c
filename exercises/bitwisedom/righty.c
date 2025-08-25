@@ -5,3 +5,10 @@
  */
 
 #include <stdio.h>
+
+unsigned rightrot(unsigned x, int n) {
+  int word_length = sizeof(unsigned) * 8;
+  n = n % word_length;
+
+  return (x >> n) | (x << (word_length - n));
+}
