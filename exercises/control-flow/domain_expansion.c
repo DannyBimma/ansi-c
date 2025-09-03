@@ -6,3 +6,7 @@
  * prepared to handle cases like a-b-c and a-z0−9 and
  * -a-z. Arrange that a leading or trailing - is taken
  *  literally.*/
+
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
