@@ -10,3 +10,10 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+
+void expand(char s1[], char s2[]) {
+  // Indices
+  int i = 0; // for input
+  int j = 0; // for output
+  int c;
+}
