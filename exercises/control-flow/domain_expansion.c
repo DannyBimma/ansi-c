@@ -49,3 +49,20 @@ void expand(char s1[], char s2[]) {
   // end scene
   s2[j] = '\0';
 }
+
+int main(int argc, char *argv[]) {
+  char expanded[69];
+
+  if (argc != 2) {
+    printf("Usage: %s <string>\n", argv[0]);
+    printf("Example: %s \"a-z0-9\"\n", argv[0]);
+
+    return 1;
+  }
+
+  // Domain expansion
+  expand(argv[1], expanded);
+  printf("%s\n", expanded);
+
+  return 0;
+}
