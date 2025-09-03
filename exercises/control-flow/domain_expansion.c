@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
 
   // Domain expansion
   expand(argv[1], expanded);
+
   printf("%s\n", expanded);
 
   return 0;
