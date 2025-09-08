@@ -18,3 +18,7 @@
  * even for INT_MIN. Then continue until n becomes 0, handling the sign
  * separately.
  */
+
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
