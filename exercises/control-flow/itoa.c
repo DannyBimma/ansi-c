@@ -21,6 +21,7 @@
 
 #include <limits.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void reverse(char s[]) {
@@ -50,4 +51,32 @@ void itoa(int n, char s[]) {
   s[i] = '\0';
 
   reverse(s);
+}
+
+int main() {
+  char buffer[20];
+
+  printf("Testing itoa function:\n\n");
+
+  // Test regular positive number
+  itoa(42069, buffer);
+  printf("42069 -> \"%s\"\n", buffer);
+
+  // Test regular negative number
+  itoa(-69420, buffer);
+  printf("-69420 -> \"%s\"\n", buffer);
+
+  // Test zero
+  itoa(0, buffer);
+  printf("0 -> \"%s\"\n", buffer);
+
+  // Test INT_MAX
+  itoa(INT_MAX, buffer);
+  printf("INT_MAX (%d) -> \"%s\"\n", INT_MAX, buffer);
+
+  // Test INT_MIN (the problematic case)
+  itoa(INT_MIN, buffer);
+  printf("INT_MIN (%d) -> \"%s\"\n", INT_MIN, buffer);
+
+  return 0;
 }
