@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverse(char s[]);
+
 void itob(int n, char s[], int b) {
   int i, sign, remainder;
   char digits[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,4 +38,34 @@ void reverse(char s[]) {
     s[i] = s[j];
     s[j] = c;
   }
+}
+
+int main() {
+  char buffer[100];
+
+  printf("Testing itob function:\n");
+  printf("----------------------\n");
+
+  itob(69, buffer, 16);
+  printf("69 in base 16: %s\n", buffer);
+
+  itob(420, buffer, 2);
+  printf("420 in base 2:  %s\n", buffer);
+
+  itob(42, buffer, 8);
+  printf("42 in base 8:  %s\n", buffer);
+
+  itob(16, buffer, 16);
+  printf("16 in base 16: %s\n", buffer);
+
+  itob(-255, buffer, 16);
+  printf("-255 in base 16: %s\n", buffer);
+
+  itob(1000, buffer, 7);
+  printf("1000 in base 7:   %s\n", buffer);
+
+  itob(0, buffer, 10);
+  printf("0 in base 10:    %s\n", buffer);
+
+  return 0;
 }
