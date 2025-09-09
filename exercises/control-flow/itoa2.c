@@ -46,3 +46,33 @@ void reverse(char s[]) {
     s[j] = c;
   }
 }
+
+int main() {
+  char buffer[100];
+
+  printf("Testing itoa function with field width:\n");
+  printf("---------------------------------------\n");
+
+  itoa(69, buffer, 3);
+  printf("'%s' (69 with width 3)\n", buffer);
+
+  itoa(420, buffer, 3);
+  printf("'%s' (420 with width 3)\n", buffer);
+
+  itoa(100, buffer, 1);
+  printf("'%s' (100 with width 1)\n", buffer);
+
+  itoa(-444, buffer, 10);
+  printf("'%s' (-444 with width 10)\n", buffer);
+
+  itoa(-666, buffer, 4);
+  printf("'%s' (-666 with width 4)\n", buffer);
+
+  itoa(0, buffer, 5);
+  printf("'%s' (0 with width 5)\n", buffer);
+
+  itoa(747, buffer, 0);
+  printf("'%s' (747 with width 0)\n", buffer);
+
+  return 0;
+}
