@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverse(char s[]);
+
 void itoa(int n, char s[], int width) {
   int i, sign, len, padding;
 
@@ -33,4 +35,14 @@ void itoa(int n, char s[], int width) {
   s[i] = '\0';
 
   reverse(s);
+}
+
+void reverse(char s[]) {
+  int c, i, j;
+
+  for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
+    c = s[i];
+    s[i] = s[j];
+    s[j] = c;
+  }
 }
