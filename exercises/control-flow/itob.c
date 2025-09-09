@@ -6,3 +6,24 @@
 
 #include <stdio.h>
 #include <string.h>
+
+void itob(int n, char s[], int b) {
+  int i, sign, remainder;
+  char digits[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  if ((sign = n) < 0)
+    n = -n;
+
+  i = 0;
+  do {
+    remainder = n % b;
+    s[i++] = digits[remainder];
+  } while ((n /= b) > 0);
+
+  if (sign < 0)
+    s[i++] = '-';
+
+  s[i] = '\0';
+
+  reverse(s);
+}
