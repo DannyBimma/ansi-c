@@ -5,6 +5,7 @@
  * integer in s.*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void reverse(char s[]);
@@ -40,32 +41,29 @@ void reverse(char s[]) {
   }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
   char buffer[100];
+  int number, base;
 
-  printf("Testing itob function:\n");
-  printf("----------------------\n");
+  if (argc != 3) {
+    printf("Usage: %s <number> <base>\n", argv[0]);
+    printf("Example: %s 255 16\n", argv[0]);
 
-  itob(69, buffer, 16);
-  printf("69 in base 16: %s\n", buffer);
+    return 1;
+  }
 
-  itob(420, buffer, 2);
-  printf("420 in base 2:  %s\n", buffer);
+  number = atoi(argv[1]);
+  base = atoi(argv[2]);
 
-  itob(42, buffer, 8);
-  printf("42 in base 8:  %s\n", buffer);
+  if (base < 2 || base > 36) {
+    printf("Error: Da faq is you trying to do!? Base must be between 2 and 36, "
+           "please and thanks\n");
 
-  itob(16, buffer, 16);
-  printf("16 in base 16: %s\n", buffer);
+    return 1;
+  }
 
-  itob(-255, buffer, 16);
-  printf("-255 in base 16: %s\n", buffer);
-
-  itob(1000, buffer, 7);
-  printf("1000 in base 7:   %s\n", buffer);
-
-  itob(0, buffer, 10);
-  printf("0 in base 10:    %s\n", buffer);
+  itob(number, buffer, base);
+  printf("%s\n", buffer);
 
   return 0;
 }
