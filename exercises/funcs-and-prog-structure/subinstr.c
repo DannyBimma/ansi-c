@@ -27,3 +27,25 @@ int strrin(char s[], char t[]) {
 
   return final_pos;
 }
+
+int main(int argc, char *argv[]) {
+  int result;
+
+  if (argc != 3) {
+    printf("Usage: %s <string> <pattern>\n", argv[0]);
+    printf("Example: %s \"hello world hello\" \"hello\"\n", argv[0]);
+
+    return 1;
+  }
+
+  result = strrin(argv[1], argv[2]);
+
+  if (result == -1) {
+    printf("Pattern \"%s\" not found in \"%s\"\n", argv[2], argv[1]);
+  } else {
+    printf("Rightmost occurrence of \"%s\" in \"%s\": Index %d\n", argv[2],
+           argv[1], result);
+  }
+
+  return 0;
+}
