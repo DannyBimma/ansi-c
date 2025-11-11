@@ -4,24 +4,29 @@
 #define OUT 0
 
 int main(void) {
-    int c, nl, nw, nc, state;
+  // Declare variables to store counts
+  int c, nl, nw, nc, flag;
 
-    state = 0;
-    nl = nw = nc = 0;
+  // Initialise variables
+  flag = 0;
+  nl = nw = nc = 0;
 
-    while ((c = getchar()) != EOF) {
-        ++nc;
-
-        if (c == '\n')
-            ++nl;
-
-        if (c == ' ' || c == '\n' || c == '\t')
-            state = OUT;
-        else if (state == OUT) {
-            state = IN;
-            ++nw;
-        }
+  // Loop over chars from stdin until EOF
+  while ((c = getchar()) != EOF) {
+    // increment for each char
+    ++nc;
+    // increment for each new line
+    if (c == '\n')
+      ++nl;
+    // set sate flag if outside of word
+    if (c == ' ' || c == '\n' || c == '\t')
+      flag = OUT;
+    else if (flag == OUT) {
+      // if inside word increment for each word
+      flag = IN;
+      ++nw;
     }
-    printf("%d %d %d\n", nl, nw, nc);
-
+  }
+  // Print the new lines, new words, and new chars counted
+  printf("%d %d %d\n", nl, nw, nc);
 }
