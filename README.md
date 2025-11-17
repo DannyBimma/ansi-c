@@ -16,5 +16,5 @@ be sure to let you know.
 ## The Book
 "The (ANSI) C Programming language" is in my opinion, the one true Holy Bible for writing C. It's
 so well written, that I've been struggling to make it past the 2nd chapter because I can't refrain
-from re-reading it. So if you've picked it up as programmer, you've made a based decision that can
-only lead to making you better.
+from re-reading it. So if you've picked it up to learn programming, then you've made a decision
+that can only be described as based! And I hope this repo helps 🥹
