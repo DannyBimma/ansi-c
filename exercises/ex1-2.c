@@ -1,8 +1,8 @@
 /*
- * Routine: Experiment to find out what happens when printf's arg string
- * contains \c, where c is an unknown character
+ * Routine: A "Hello, world!" program that uses the 'Alert(Bell)' escape
+ *          sequence to trigger a system beep.
  *
- * Author: DannyBimma
+ * Author:  DannyBimma
  *
  * Copyright (c) 2025 Technomancer Pirate Captain. All Rights Reserved.
  *
@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello, world!\c");
+  printf("Hello, world!\a");
 
   return 0;
 }
