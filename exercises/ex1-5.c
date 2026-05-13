@@ -11,9 +11,11 @@
 #include <stdio.h>
 
 int main(void) {
-  int fahrenheit;
+    int fahrenheit;
 
-  // The associated example in the book used a for loop, so I did too
-  for (fahrenheit = 300; fahrenheit >= 0; fahrenheit -= 20)
-    printf("%3d %6.1f\n", fahrenheit, (5.0 / 9.0) * (fahrenheit - 32));
+    // The associated example in the book used a for loop, so I did too
+    for (fahrenheit = 300; fahrenheit >= 0; fahrenheit -= 20)
+        printf("%3d %6.1f\n", fahrenheit, (5.0 / 9.0) * (fahrenheit - 32));
+
+    return 0;
 }
