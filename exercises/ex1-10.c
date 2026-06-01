@@ -1,6 +1,7 @@
 /*
  * Routine: A program that copies its input to its output, replacing
- *          each string of one or more blanks by a single blank.
+ *          each tab by /t, each backspace by /b, and each backslash
+ *          by //. Making backspaces unambiguously visible.
  *
  * Author:  DannyBimma
  *
@@ -12,14 +13,16 @@
 
 int main(void) {
     int ch;
-    int prev_ch = EOF;
 
     while ((ch = getchar()) != EOF) {
-        // If the current char OR previous char is NOT a blank, then print it
-        if (ch != ' ' || prev_ch != ' ')
+        if (ch == '\t')
+            printf("\\t");
+        else if (ch == '\b')
+            printf("\\b");
+        else if (ch == '\\')
+            printf("\\\\");
+        else
             putchar(ch);
-
-        prev_ch = ch;
     }
 
     return 0;
