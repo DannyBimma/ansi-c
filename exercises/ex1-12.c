@@ -17,7 +17,7 @@ int main(void) {
     int state = OUT;
 
     while ((ch = getchar()) != EOF) {
-        if (ch != ' ' || ch != '\n' || ch != '\t') {
+        if (ch != ' ' && ch != '\n' && ch != '\t') {
             state = IN;
             putchar(ch);
         } else
