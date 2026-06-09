@@ -1,7 +1,7 @@
 /*
  A program that counts the number of occurrences of each digit,
  of white space characters (blanks, tabs, newline), and of all
- other characters. Theses counts will be stored in an array becasue
+ other characters. Theses counts will be stored in an array because
  K&R said it's more convenient that way innit!?
  */
 
