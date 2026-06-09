@@ -16,16 +16,31 @@
 int main(void) {
     int ch;
     int wc = 0;
+    int ciw = 0;
     int state = OUT;
 
-    // Count the number of words in input
+    // Count num of words and chars in input
     while ((ch = getchar()) != EOF) {
         if (ch == ' ' || ch == '\n' || ch == '\t')
             state = OUT;
         else if (state == OUT) {
             state = IN;
             ++wc;
+            // count num of chars in word
+            if (ch != ',' && ch != '.' && ch != '!' && ch != '?')
+                ++ciw;
         }
     }
-    printf("%d", wc);
+
+    // Create histogram array
+    int histo[wc];
+
+    // Print histogram array
+    for (int i = 0; i < wc; ++i) {
+        printf("%d", ciw);
+    }
+
+    putchar('\n');
+
+    return 0;
 }
