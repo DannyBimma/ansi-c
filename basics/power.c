@@ -9,6 +9,8 @@ int main(void) {
     for (int i = 0; i < 10; ++i)
         printf("%d %d %d", i, power(2, i), power(-3, i));
 
+    putchar('\n');
+
     return 0;
 }
 
