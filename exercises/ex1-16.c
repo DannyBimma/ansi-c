@@ -37,3 +37,34 @@ int main(void) {
 
     return 0;
 }
+
+/*
+ * get_line: read a line into s[] and return TRUE length.
+ *
+ * i   — index into s[]; only advances while the buffer has room
+ * len — counts every character read even if they don't fit
+ *
+ * While loop keeps consuming input until '\n' or EOF even after
+ * the buffer is full. This clears the input stream so the next
+ * call starts cleanly on next line.
+ */
+int get_line(char s[], int lim) {
+    int c;
+    int i = 0;   // chars stored in buffer
+    int len = 0; // true character count
+
+    while ((c = getchar()) != EOF && c != '\n') {
+        if (i < lim - 1) // store char if room left
+            s[i++] = c;
+        ++len; // keeping counting regardless of buffer overflow
+    }
+    if (c == '\n') {
+        if (i < lim - 1) // store '\n' if there's room left
+            s[i++] = '\n';
+        ++len;
+    }
+
+    s[i] = '\0';
+
+    return len;
+}
