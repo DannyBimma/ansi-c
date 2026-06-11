@@ -25,3 +25,24 @@ int main(void) {
 
     return 0;
 }
+
+// Read a line into s and return its length (not including the newline)
+int get_line(char s[], int lim) {
+    int c;
+    int i = 0;
+    int len = 0;
+
+    while ((c = getchar()) != EOF && c != '\n') {
+        if (i < lim - 1)
+            s[i++] = c;
+        ++len; // count even if not stored
+    }
+    if (c == '\n') {
+        if (i < lim - 1)
+            s[i++] = '\n'; // stored if there's but not counted
+    }
+
+    s[i] = '\0';
+
+    return len;
+}
